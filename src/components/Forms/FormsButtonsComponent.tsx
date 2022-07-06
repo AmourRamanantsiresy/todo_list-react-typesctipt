@@ -76,7 +76,7 @@ export const ButtonToAdd: React.FC = () => {
     return (
         <>
             <div className="add__button" onClick={(): void => handleChange()}>
-                <i className="fa-solid display-4 text-light fa-circle-plus">+</i>
+                <i className="fa-solid display-4 text-light fa-circle-plus"></i>
             </div>
         </>
     );
