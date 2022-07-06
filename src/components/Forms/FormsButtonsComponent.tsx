@@ -3,19 +3,22 @@ import { InputContext } from "../../App";
 import { ValuesValidators, nextValue, idIndex } from "../FunctionCollection";
 import { IFormInformation, State } from "../InterfaceCollection";
 
-export const ButtonsSection: React.FC<{ information: IFormInformation }> = (props) => {
-    const { information } = props;
+export const ButtonsSection: React.FC<{ information: IFormInformation, theReference: React.MutableRefObject<null | HTMLDivElement> }> = (props) => {
+    const { information, theReference } = props;
     let { setInputState, setValues, inputState, values } = useContext(InputContext);
 
     const cancel = (): void => {
-        setInputState != null && setInputState({
-            values: {
-                title: "",
-                description: "",
-                state: State.TODO,
-                id: -1
-            }, state: 0
-        })
+        theReference.current?.classList.add("close")
+        setTimeout((): void => {
+            setInputState != null && setInputState({
+                values: {
+                    title: "",
+                    description: "",
+                    state: State.TODO,
+                    id: -1
+                }, state: 0
+            })
+        }, 1500)
     }
 
     const remove = (): void => {
@@ -73,7 +76,7 @@ export const ButtonToAdd: React.FC = () => {
     return (
         <>
             <div className="add__button" onClick={(): void => handleChange()}>
-                <div className="plus"></div>
+                <i className="fa-solid display-4 text-light fa-circle-plus">+</i>
             </div>
         </>
     );

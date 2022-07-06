@@ -1,6 +1,9 @@
 body {
     margin-top: 5%;
+    overflow-x: hidden;
 }
+
+/*_____Style of the card_____*/
 
 .hv-75 {
     height: 70vh !important;
@@ -26,66 +29,39 @@ body {
     z-index: 2000;
 }
 
+.w100 {
+    width: 100vw !important;
+    margin: 0;
+    padding: 0;
+}
+
+/*_____Style of the card_____*/
+
+
+/*_____Style of the nav bar button_____*/
 .add__button {
     position: absolute;
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    background: white;
-    margin: 0;
-    padding: 0;
+    cursor: pointer;
+    text-shadow: 2px 2px 3px black, -2px -2px 3px white;
 }
 
-.add__button::after {
-    height: 2rem;
-    width: 2rem;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-}
-
-.plus {
-    height: 3rem;
-    width: 3rem;
-    position: relative;
-}
-
-.plus::after,
-.plus::before {
-    z-index: 12;
-}
-
-.plus::after,
-.plus::before,
-.add__button::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.plus::after {
-    width: 0.2rem;
-    height: 2rem;
-    background: white;
-}
-
-.plus::before {
-    transform: translate(-50%, -50%) rotate(90deg);
-    width: 0.2rem;
-    height: 2rem;
-    background: white;
-}
+/*_____Style of the nav bar button_____*/
 
 
+
+/*_____Style of the animation when we click on the button add, save, cancel or remove_____*/
 .forms {
     height: 0;
     overflow: hidden;
     animation: showDown 1s forwards;
     opacity: 0;
+}
+
+.close {
+    animation: reverse showDown 2s 1s forwards;
 }
 
 @keyframes showDown {
@@ -95,7 +71,60 @@ body {
     }
 
     100% {
-        height: 50vh;
+        height: 100vh;
         opacity: 1;
     }
 }
+
+/*_____Style of the animation when we click on the button add, save, cancel or remove_____*/
+
+
+/*_____Style of the principal container and three container inside_____*/
+
+.gridCss {
+    padding: 0;
+    margin: 7% 0 0 0;
+    display: grid !important;
+    justify-content: space-around;
+    grid-template-columns: 30% 30% 30%;
+}
+
+.container-fixed {
+    position: fixed;
+}
+
+/*_____Responsive design_____*/
+@media (max-width:1150px) {
+    .gridCss {
+        grid-template-columns: 40% 40%;
+        margin: 7% 0 0 0;
+    }
+
+    .hv-75 {
+        height: 70vh !important;
+    }
+}
+
+@media (max-width: 1060) {
+    body {
+        transform: translateY(10vh);
+        margin: 13% 0 0 0;
+    }
+
+    .hv-75 {
+        height: 90vh !important;
+    }
+}
+
+@media (max-width: 870px) {
+    .gridCss {
+        grid-template-columns: 90%;
+        margin: 14% 0 0 0;
+    }
+
+    .hv-75 {
+        height: 100vh !important;
+    }
+}
+
+/*_____Style of the principal container and three container inside_____*/

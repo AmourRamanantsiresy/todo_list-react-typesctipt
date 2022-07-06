@@ -1,5 +1,8 @@
+import { FC } from "react";
 import { IEventComponent, State } from "../InterfaceCollection";
-export const TitleInput: React.FC<IEventComponent> = (props) => {
+
+//The input where the user should put the title of the task (NOT NULL)
+export const TitleInput: FC<IEventComponent> = (props) => {
     const { handleChange, information } = props;
     return (
         <div className="form-floating mb-3">
@@ -16,7 +19,8 @@ export const TitleInput: React.FC<IEventComponent> = (props) => {
     );
 }
 
-export const DescriptionArea: React.FC<IEventComponent> = (props) => {
+//The Textarea where the user should put the description of the task (NOT NULL)
+export const DescriptionArea: FC<IEventComponent> = (props) => {
     const { handleChange, information } = props;
     return (
         <div className="form-floating mb-3">
@@ -32,7 +36,12 @@ export const DescriptionArea: React.FC<IEventComponent> = (props) => {
     );
 }
 
-export const StateOption: React.FC<IEventComponent> = (props) => {
+/*
+    The select input [
+        Todo, Doing, Done
+    ] where the user sould select the state, what they want for these task, default: todo
+ */
+export const StateOption: FC<IEventComponent> = (props) => {
     const { handleChange, information } = props;
     return (
         <div className="input-group mb-3">

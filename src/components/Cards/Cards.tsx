@@ -9,11 +9,13 @@ export const Cards: React.FC<{ val: IFormInformation[] }> = (props) => {
     const newVal: IFormattedValues = FormatValues(val);
 
     return (
-        <div className="w-100 d-flex justify-content-around">
-            <ThreeComponent vals={newVal.todo} title="Todo" />
-            <ThreeComponent vals={newVal.doing} title="Doing" />
-            <ThreeComponent vals={newVal.done} title="Done" />
-        </div>
+        <>
+            <div className="w100 gridCss">
+                <ThreeComponent vals={newVal.todo} title="Todo" />
+                <ThreeComponent vals={newVal.doing} title="Doing" />
+                <ThreeComponent vals={newVal.done} title="Done" />
+            </div>
+        </>
     );
 }
 

@@ -1,11 +1,11 @@
 import { IFormInformation, State } from "../InterfaceCollection";
-import { useContext } from "react";
+import { useContext, FC } from "react";
 import { InputContext } from "../../App";
 
-export const ThreeComponent: React.FC<{ title: string, className?: string, vals: IFormInformation[] }> = (props) => {
+export const ThreeComponent: FC<{ title: string, className?: string, vals: IFormInformation[] }> = (props) => {
     const { title, className, vals } = props;
     return (
-        <div className={"container bg-dark text-light p-3 m-3 rounded-3 bg-gradient " + className}>
+        <div className={"container bg-dark text-light mb-3 rounded-3 bg-gradient " + className}>
             <p className="display-6">{title}</p>
             <hr />
             <div className="container hv-75 overflow-auto">
@@ -28,7 +28,7 @@ export const ThreeComponent: React.FC<{ title: string, className?: string, vals:
     );
 }
 
-const ElementInThree: React.FC<{ val: IFormInformation, color: string, k: number }> = (props) => {
+const ElementInThree: FC<{ val: IFormInformation, color: string, k: number }> = (props) => {
     const { setInputState } = useContext(InputContext);
     const { val, color, k } = props;
     const keys = val.title + color + k;

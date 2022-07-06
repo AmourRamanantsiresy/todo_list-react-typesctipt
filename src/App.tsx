@@ -1,9 +1,10 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Cards } from './components/Cards/Cards';
 import { Forms } from './components/Forms/Forms';
 import { IFormInformation, IInput, IInputContext, State } from './components/InterfaceCollection';
 import data from "./components/data.json";
 import { ButtonToAdd } from './components/Forms/FormsButtonsComponent';
+
 const initialInput: IFormInformation = {
   title: "",
   description: "",
@@ -25,7 +26,7 @@ const App: React.FC = () => {
   return (
     <div>
       <InputContext.Provider value={inputGlobalStateController}>
-        <div className="fontainer-fluid bg-gradient hv-10 d-flex flex-column justify-content-center align-items-center bg-dark">
+        <div className="fontainer-fluid bg-gradient container-fixed hv-10 bg-dark">
           {
             inputState.state === 0
               ? <>
